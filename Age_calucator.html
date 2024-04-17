@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h2>Age Calculator</h2>
+    <p>Enter your birthdate:</p>
+    <input type="date" id="dob">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <p id="output"></p>
+
+    <script>
+        function calculateAge() {
+            var dob = new Date(document.getElementById('dob').value);
+            var diff_ms = Date.now() - dob.getTime();
+            var age_dt = new Date(diff_ms); 
+
+            var age = Math.abs(age_dt.getUTCFullYear() - 1970);
+            document.getElementById('output').innerHTML = "Your age is " + age;
+        }
+    </script>
+</body>
+</html>
